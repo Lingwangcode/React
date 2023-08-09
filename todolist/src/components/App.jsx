@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Li from "./Li";
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       </div>
       <div>
         <ul>
-          {itemList.map(item=> <li>{item}</li>)}
+          {itemList.map(item=> <Li item={item}/>)}
         </ul>
       </div>
     </div>
