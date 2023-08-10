@@ -15,7 +15,18 @@ function App() {
     setItemOnList((prevItems)=>{
       return[...prevItems, item]
     });
+    setItem("")
   }
+
+  function deleteItem(id){
+    //console.log("delete function")
+    
+    setItemOnList((previtems)=>
+      (previtems.filter((item, index) => {return index !== id}))
+    )
+  }
+
+
 
   return (
     <div className="container">
@@ -30,7 +41,7 @@ function App() {
       </div>
       <div>
         <ul>
-          {itemList.map(item=> <Li item={item}/>)}
+          {itemList.map((item, index)=> <Li key={index} id={index} onClick={deleteItem} item={item}/>)}
         </ul>
       </div>
     </div>
